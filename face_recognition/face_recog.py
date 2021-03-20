@@ -32,7 +32,7 @@ def train(path):
     face_encodings = []
     face_names = []
     process_this_frame = True
-
+    name = ""
 
     video_capture = cv2.VideoCapture(0)
     while True:
@@ -50,7 +50,10 @@ def train(path):
                 best_match_index = np.argmin(face_distances)
                 if matches[best_match_index]:
                     name = faces_names[best_match_index]
+                    break
+        '''
                 face_names.append(name)
+
         process_this_frame = not process_this_frame
         # Display the results
         for (top, right, bottom, left), name in zip(face_locations, face_names):
@@ -65,8 +68,12 @@ def train(path):
             font = cv2.FONT_HERSHEY_DUPLEX
             cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
         # Display the resulting image
+        
         cv2.imshow('Video', frame)
-        # Hit 'q' on the keyboard to quit!
+         Hit 'q' on the keyboard to quit!
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
+        '''
+        return name
+
 

@@ -17,7 +17,8 @@ app.config["DEBUG"]= True
 def home():
     print("hello")
 
-    train(os.getcwd)
+    name = train(os.getcwd)
+    print(name)
     return render_template('test.html')
 
 if __name__ == '__main__': 
