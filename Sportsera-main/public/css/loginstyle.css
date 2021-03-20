@@ -1,0 +1,88 @@
+body {
+	/* background: url('../images/trophy1.jpg') no-repeat;
+	position: relative; */
+	background: url('../images/trophy1.jpg') no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+#loginbox{
+	box-shadow: 5px 5px;
+	background-color: rgb(255,255,255,0.3);
+	border: 2px solid black;
+	position: absolute;
+	border-radius: 25px;
+  	margin: auto;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	width: 500px;
+	height:330px;
+   	-webkit-animation: mymove 2s ; /* Safari 4.0 - 8.0 */
+  	animation: mymove 2s;
+/* Safari 4.0 - 8.0 */
+}
+@-webkit-keyframes mymove {
+  from {top: -1000px;}
+  to {top: 0px;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+  from {top: -1000px;}
+  to {top: 0px;}
+}
+	
+	/*background-color: #fff;*/
+	
+	
+	
+
+#logintext{
+	text-align: center;
+	font-size: 2.5em;
+	border-radius:20px 20px 0px 0px;
+	background-color: #bf0f02;
+	color:#06571c;
+	background-color: rgb(255,255,255,0.3);
+
+}
+
+
+form{
+	  font-family: "Times New Roman", Times, serif;
+	  font-weight: 800;
+	  font-size: 1.4em;
+	  color: #000;
+}
+#box{
+
+	margin-left: 133px;
+
+
+}
+.box1
+{
+	border: 1px solid black;
+	background-color: #ebebeb;
+}
+.box1:hover
+{
+	border: 2px solid black;
+	background-color: #ebebeb;	
+}
+
+#submitbutton{
+	margin-left: 80px;
+	margin-right: 204px;
+	box-shadow: 2px 2px 2px black;
+	border-radius: 5px;
+}
+#buttonconfig{
+	background-color: #f44336;
+	color:#000;
+	background-color: rgb(255,255,255,0.7);
+}

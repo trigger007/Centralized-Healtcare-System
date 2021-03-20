@@ -1,0 +1,153 @@
+body{
+	background: url("../images/trophy3.jpg");
+	/*background: rgb(96,153,214);*/
+
+}
+#signupbox{
+	box-shadow: 2px 2px #949391;
+
+	background-color: rgb(255,255,255);
+	 background-image: linear-gradient(#fff,#ebeae8);
+	
+	 position: absolute;
+	
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+	
+	/*background-color: #fff;*/
+	
+	width: 500px;
+	height: 800px;
+	
+}
+#signuptext
+{
+	text-align: left;
+	margin-left: 30px;
+	margin-top:20px;
+	font-size: 2em;
+	font-weight: 500;
+}
+#subtext
+{
+	text-align: left;
+	margin-left: 30px;
+	color: #bfbfbf;
+	
+}
+#line
+{
+	height:10px;
+	border-bottom:  2px solid #bfbfbf;
+
+}
+.box1
+{
+	color: rgb(0,0,0,0.4);
+	background-color: #d4d4d4;
+	border: 0px;
+	height:40px;
+	padding-left: 5px;
+
+}
+.box1:hover
+{
+	color: rgb(0,0,0,0.4);
+	background-color: #d4d4d4;
+	border: 2px solid black;
+	height:40px;
+	padding-left: 5px;
+
+}
+#firstname
+{
+	float: left;
+	margin-left: 25px;
+	
+
+}
+#lastname
+{
+	float:right;
+	margin-right: 30px;
+}
+#username
+{
+	margin-left: 25px;
+	width:89%;
+	margin-right: 30px;
+}
+#mobileno
+{
+	margin-left: 25px;
+	width:89%;
+	margin-right: 30px;
+}
+#address1
+{
+		float: left;
+	margin-left: 25px;
+}
+#address2
+{
+	float:right;
+	margin-right: 30px;
+
+}
+#address3
+{
+		float: left;
+	margin-left: 25px;
+}
+#zipcode
+{
+	float:right;
+	margin-right: 30px;
+
+}
+#password1
+{
+	margin-left: 25px;
+	width:50%;
+	margin-right: 30px;
+
+}
+#buttonconfig
+{
+	background: rgb(96,153,214);
+	border:0px;
+	margin-left:25px;
+	height:50px;
+	width: 150px;
+	color:#fff;
+	font-size: 1.5em;
+	box-shadow: 2px 2px 2px 2px #949391;
+	border-radius: 10px;
+
+}
+#buttonconfig:hover
+{
+	background: rgb(96,153,214);
+	border:0px;
+	margin-left:25px;
+	height:60px;
+	width: 170px;
+	color:#fff;
+	font-size: 1.5em;
+	box-shadow: 2px 2px 2px 2px #949391;
+	border-radius: 10px;
+
+}
+#tc
+{
+	margin-left: 25px;
+	border:0px;
+
+}
+#details
+{
+
+}

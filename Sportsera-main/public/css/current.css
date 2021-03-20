@@ -1,0 +1,97 @@
+body {
+    /* background: url('../images/trophy1.jpg') no-repeat;
+	position: relative; */
+    background: url('../images/trophy1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+* {
+    font-family: sans-serif; /* Change your font family */
+}
+
+.container{
+    margin-top: 250px;
+    background-color: whitesmoke;
+    width: 350px;
+    border: solid 5px black;
+}
+
+.container p{
+    padding-bottom: 10px;
+}
+
+h1{
+    color: red;
+}
+
+#content-table {
+    position: absolute;
+    border-radius: 25px;
+    border-collapse: collapse;
+    margin: 220px 580px;
+    font-size: 0.9 em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 5px #ffffff;
+    -webkit-animation: mymove 2s; /* Safari 4.0 - 8.0 */
+    animation: mymove 2s;
+}
+
+@-webkit-keyframes mymove {
+    from {
+        top: -1000px;
+    }
+
+    to {
+        top: 0px;
+    }
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    from {
+        top: -1000px;
+    }
+
+    to {
+        top: 0px;
+    }
+}
+
+    #content-table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        align-content: center;
+        font-weight: bold;
+    }
+
+    #content-table th,
+    #content-table td {
+        align-content: center;
+        padding: 15px 15px;
+    }
+
+    #content-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+        #content-table tbody tr:nth-of-type(even) {
+            background-color: #ccffcc;
+        }
+
+        #content-table tbody tr:nth-of-type(odd) {
+            background-color: #f3f3f3;
+        }
+
+        #content-table tbody tr:last-of-type {
+            border-bottom: 3px solid #009879;
+        }
+
+        #content-table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }

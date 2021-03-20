@@ -1,0 +1,60 @@
+body {
+    /*background: #141E30;
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);
+    background: linear-gradient(to right, #243B55, #141E30);
+    background: #b92b27; 
+    background: -webkit-linear-gradient(to right, #1565C0, #b92b27);
+    background: linear-gradient(to right, #1565C0, #b92b27);*/
+    background: url("../images/wall3.jpeg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+* {
+    font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 153px 425px;
+    font-size: 0.9 em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 5px #ffffff;
+}
+
+ .content-table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        align-content: center;
+        font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+        align-content: center;
+        padding: 15px 15px;
+    }
+
+    .content-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+        .content-table tbody tr:nth-of-type(even) {
+            background-color: #ccffcc;
+        }
+        .content-table tbody tr:nth-of-type(odd) {
+            background-color: #f3f3f3;
+        }
+
+    .content-table tbody tr:last-of-type {
+            border-bottom: 3px solid #009879;
+        }
+
+    .content-table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }

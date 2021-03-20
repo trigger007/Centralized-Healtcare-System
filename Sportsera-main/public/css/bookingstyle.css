@@ -1,0 +1,19 @@
+body {
+    background: url("../images/wall2.jpeg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#main{
+   padding-left: 570px;
+   
+}
+
+#date{
+    color: white;
+    font-family: Calibri;
+    padding-left: 620px;
+    padding-top: 100px;
+}

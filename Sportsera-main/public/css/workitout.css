@@ -1,0 +1,47 @@
+body {
+    /* background: url('../images/trophy1.jpg') no-repeat;
+	position: relative; */
+    background: url('../images/work.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#tmpm{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: 600;
+    margin-left: 20px;
+
+}
+
+.container {
+    margin-left: 500px;
+    margin-top: 130px;
+    width: 510px;
+    height: 500px;
+    /*background-color: azure;*/
+    box-shadow: 5px 5px;
+    background-color: rgb(255,255,255,0.5);
+    border: 2px solid red;
+    position: absolute;
+    border-radius: 25px;
+}
+
+#but{
+    margin-left: 210px;
+    border: 1px solid black;
+}
+
+#canvas{
+    margin-left: 90px;
+    margin-top: 15px;
+}
+
+#label-container{
+    margin-left: 90px;
+    color: whitesmoke;
+    font-size:large;
+    font-weight: 300;
+}

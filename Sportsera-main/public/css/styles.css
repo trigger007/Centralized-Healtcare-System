@@ -1,0 +1,291 @@
+body {
+  font-size: 16px;
+  color: #fff;
+  background-image: linear-gradient(to right, #000,#000);
+
+  font-family: 'Oxygen', sans-serif;
+}
+
+#heading
+{
+  background-image: linear-gradient(to right, #000,#000);
+  position:relative;
+}
+
+* {box-sizing:border-box}
+
+/* .right{
+  text-align: right;
+} */
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+
+}
+#icon
+{
+  
+  position: absolute;
+  right:10px;
+  top:70px;
+  right: 30px;
+  font-size: 40px;
+  color:#3b5998;
+
+}
+#icon2
+{
+  
+  position: absolute;
+  right:10px;
+  top:70px;
+  right: 120px;
+  font-size: 40px;
+  color:#1DA1F2;
+
+}
+
+#icon3
+{
+  
+  position: absolute;
+  right:150px;
+  top:70px;
+  right: 230px;
+  font-size: 40px;
+  color:#eb0c0c;
+
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 30px;
+  left:50px;
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+}
+#text1
+{
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 340px;
+  left:50px;
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+
+}
+#text2
+{
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 50px;
+  left:50px;
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+  color:#acbdb0;
+
+
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.1s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0.1s;
+  animation-name: fade;
+  animation-duration: 8s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .9}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .9}
+  to {opacity: 1}
+}
+
+/** HEADER **/
+
+#header-nav {
+  background-color: #f6b319;
+  border-radius: 0;
+  border: 0;
+}
+
+
+
+
+/* FOOTER */
+.panel-footer {
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #222;
+
+  border-top: 0;
+}
+
+.panel-footer div.row {
+  margin-bottom: 35px;
+}
+#hours, #address {
+  line-height: 2;
+}
+#hours > span, #address > span {
+  font-size: 1.3em;
+}
+#address p {
+  color: #557c3e;
+  font-size: .8em;
+  line-height: 1.8;
+}
+#testimonials {
+  font-style: italic;
+}
+#testimonials p:nth-child(2) {
+  margin-top: 25px;
+}
+/* END FOOTER */
+
+
+#rssOutput
+{
+  font-size: 2em;
+  font-weight: bold;
+}
+/* HOME PAGE */
+.container .jumbotron {
+  box-shadow: 0 0 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+}
+
+#cricket,#tabletennis,#football,#tennis,#basketball,#badminton,#specials-tile, #map-tile {
+  height: 250px;
+  width: 100%;
+ margin-bottom: 15px;
+  position: relative;
+  border: 2px solid #3F0C1F;
+  overflow: hidden;
+}
+#cricket:hover,#tabletennis:hover,#badminton:hover,#football:hover,#basketball:hover,#tennis:hover, #specials-tile:hover, #map-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+#cricket {
+  background: url('../images/cricket.jpg') no-repeat;
+  background-position: center;
+}
+#tabletennis {
+  background: url('../images/tabletennis.jpg') no-repeat;
+  background-position: center;
+}
+#tennis {
+  background: url('../images/tennis.jpg') no-repeat;
+  background-position: center;
+}#badminton {
+  background: url('../images/badminton.jpg') no-repeat;
+  background-position: center;
+}#football {
+  background: url('../images/football.jpg') no-repeat;
+  background-position: center;
+}#basketball {
+  background: url('../images/basketball.jpg') no-repeat;
+  background-position: center;
+}
+#specials-tile {
+  background: url('../images/specials-tile.jpg') no-repeat;
+  background-position: center;
+}
+#cricket span,#tabletennis span,#tennis span,#football span,#badminton span, #basketball span,#specials-tile span, #map-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  opacity: .8;
+}
+
+
+/* END HOME PAGE */
+
+/********** Large devices only **********/
