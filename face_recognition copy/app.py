@@ -4,7 +4,7 @@ import numpy as np
 from scipy import stats
 import logging
 import datetime
-#import os.path
+import os.path
 from flask import Markup
 import os
 from face_recog import train
@@ -17,6 +17,12 @@ app.config['MYSQL_HOST'] = '127.0.0.1'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'tarp'
+
+import base64
+def save(username,image):
+    decodeit = open("data/" + username+".jpeg", 'wb') 
+    decodeit.write(base64.b64decode((image))) 
+    decodeit.close()
 
 
 mysql = MySQL(app)
@@ -37,8 +43,10 @@ def signup():
     dob=" "
     username=" "
     gender=" "
+    image=" "
     if request.method == 'POST':
         name=request.form['name']
+        image=request.form['image']
         email=request.form['email']
         password=request.form['password']
         dob=request.form['dob']
@@ -48,21 +56,9 @@ def signup():
         cur.execute("INSERT INTO users(name,email,username,password,dob,gender) VALUES(%s,%s,%s,%s,%s,%s)", (name, email,username,password,dob,gender))
         mysql.connection.commit()
         cur.close()
-        return 'success'
-        print(name,email,password,dob,username,gender)
-
-
-
-
-        
-
-
-
-    
-
-    
-
-    print("Signed Up")
+        l=image.split(",")
+        save(username,l[1])
+        print(name,email,password,dob,username,gender,"image",image)
 
     # name = train(os.getcwd)
     # print(name)

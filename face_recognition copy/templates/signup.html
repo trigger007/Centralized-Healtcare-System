@@ -57,6 +57,7 @@
 
   <!-- Configure a few settings and attach camera -->
   <script language="JavaScript">
+    
     Webcam.set({
       width: 490,
       height: 390,
@@ -75,6 +76,7 @@
     function take_snapshot() {
     Webcam.snap( function(data_uri) {
         // display results in page
+        $(".image-tag").val(data_uri);
         document.getElementById('results').innerHTML = 
         '<img id="image" src="'+data_uri+'"/>';
       } );      

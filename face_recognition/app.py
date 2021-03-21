@@ -15,7 +15,8 @@ app.config["DEBUG"]= True
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
-    print("hello")
+    im=" "
+
 
     name = train(os.getcwd)
     print(name)
