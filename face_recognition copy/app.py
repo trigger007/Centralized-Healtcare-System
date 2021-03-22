@@ -30,12 +30,20 @@ mysql = MySQL(app)
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     print("hello")
+    if request.method == 'POST':
+        username=request.form['username']
+        print(username)
+        s="/data/"+username+".jpeg"
+        name = train(os.getcwd)
+        print(name)
+        if name==s:
+            print(name)
+            return redirect(f'/signup')
+            
+    
+    return render_template('login.html')
 
-    name = train(os.getcwd)
-    print(name)
-    return render_template('signup.html')
-
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/signup', methods=['POST', 'GET'])
 def signup():
     name=" "
     email=" "
