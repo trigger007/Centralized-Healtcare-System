@@ -87,6 +87,7 @@ def ocr():
         from aadharcard import aadhar_card_front
         name , father, addr, aadhar_number, gender, dob, region = aadhar_card_front((os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+uploaded_file.filename),
                                                                                 (os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+back_file.filename))
+        return redirect('aadhaar.html',name , father, addr, aadhar_number, dob)
 
         
     return render_template('ocr.html')
