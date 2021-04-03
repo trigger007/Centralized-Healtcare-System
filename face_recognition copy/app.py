@@ -78,10 +78,12 @@ def signup():
 def ocr():
     if request.method=="POST":
         uploaded_file = request.files['front']
+        back_file = request.files['back']
 
-        if uploaded_file.filename != '':
-            uploaded_file.save(uploaded_file.filename)
-    return render_template('upload.html')
+        if uploaded_file.filename != '' and back_file.filename!='':
+            uploaded_file.save(os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+uploaded_file.filename)
+            back_file.save(os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+back_file.filename)
+    return render_template('ocr.html')
 
 if __name__ == '__main__': 
   
