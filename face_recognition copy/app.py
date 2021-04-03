@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, session
 import pandas as pd
 import numpy as np
 from scipy import stats
@@ -19,6 +19,7 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'tarp'
 app.config["UPLOAD_FOLDER"]=UPLOAD_FOLDER
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 import base64
 def save(username,image):
@@ -87,13 +88,28 @@ def ocr():
         from aadharcard import aadhar_card_front
         name , father, addr, aadhar_number, gender, dob, region = aadhar_card_front((os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+uploaded_file.filename),
                                                                                 (os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+back_file.filename))
-        return redirect('aadhaar.html',name , father, addr, aadhar_number, dob)
+
+        session['name'] = name
+        session['father'] = father
+        session['addr'] = addr
+        session['aadhar_num'] = aadhar_number
+        session['gender'] = gender
+        session['dob'] = dob
+        print("Session-Name",name)
+        
+        return render_template('aadhaar.html',name = name,co = father,aadhaar = aadhar_number,address = addr,dob = dob)
+        #return render_template('aadhaar.html',name = name)
+    return render_template('ocr.html')
+
+
+
 
         
-    return render_template('ocr.html')
+    return render_template('aadhaar.html')
 
 if __name__ == '__main__': 
   
     # run() method of Flask class runs the application  
     # on the local development server. 
     app.run()
+    

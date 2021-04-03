@@ -60,7 +60,7 @@
                     <div class="card login-page bg-white shadow mt-4 rounded border-0">
                         <div class="card-body">
                             <h4 class="text-center">Sign Up</h4>
-                            <form method="POST" action="" id="myForm" class="login-form mt-4">
+                            <form method="POST" action="/response" id="myForm" class="login-form mt-4">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="mb-3">
@@ -82,22 +82,22 @@
                                         <div class="mb-3">
                                             <label class="form-label">Full name <span
                                                     class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" placeholder={{name}} name="name"
-                                                required="" value="">
+                                            <input type="text" class="form-control" value = {{name}} name="name"
+                                                required="" >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label">C/O 
                                                 <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" placeholder={{father}}
+                                            <input type="text" class="form-control" placeholder={{co}}
                                                 name="co" required="" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
-                                            <label class="form-label">Aadhaar Number<span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" placeholder={{aadhar_number}} name="aadhaar"
+                                            <label class="form-labl">Aadhaar Number<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" placeholder={{aadhaar}} name="aadhaar"
                                                 required="" value="">
                                         </div>
                                     </div>
@@ -105,7 +105,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">Address <span
                                                     class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" placeholder={{addr}}
+                                            <input type="text" class="form-control" placeholder={{address}}
                                                 name="address" required="" value="">
                                         </div>
                                     </div>
@@ -117,7 +117,7 @@
                                                 name="dob" required="">
                                         </div>
                                     </div>
-                                    <div class="">
+                                    <!-- <div class="">
                                         <div class="mb-3">
                                             <label class="form-label">Gender <span class="text-danger">*</span></label>
                                             <input type="radio" class="" name="gender" value="female" required="">
@@ -125,7 +125,7 @@
                                             <input type="radio" class="" name="gender" value="male" required=""> Male
                                             <input type="radio" class="" name="gender" value="other" required=""> Other
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- <div class="col-md-12">
                                         <div class="mb-3">
                                             <div class="form-check">
