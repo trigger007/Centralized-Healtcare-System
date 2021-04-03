@@ -83,6 +83,12 @@ def ocr():
         if uploaded_file.filename != '' and back_file.filename!='':
             uploaded_file.save(os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+uploaded_file.filename)
             back_file.save(os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+back_file.filename)
+        
+        from aadharcard import aadhar_card_front
+        name , father, addr, aadhar_number, gender, dob, region = aadhar_card_front((os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+uploaded_file.filename),
+                                                                                (os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+back_file.filename))
+
+        
     return render_template('ocr.html')
 
 if __name__ == '__main__': 
