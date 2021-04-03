@@ -10,6 +10,7 @@ import os
 from face_recog import train
 from flask_mysqldb import MySQL
 
+UPLOAD_FOLDER = 'static/uploads/'
 
 app=Flask(__name__)
 app.config["DEBUG"]= True
@@ -17,6 +18,7 @@ app.config['MYSQL_HOST'] = '127.0.0.1'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'tarp'
+app.config["UPLOAD_FOLDER"]=UPLOAD_FOLDER
 
 import base64
 def save(username,image):
@@ -72,7 +74,14 @@ def signup():
     # print(name)
     return render_template('signup.html')
 
+@app.route('/ocr', methods=['POST', 'GET'])
+def ocr():
+    if request.method=="POST":
+        uploaded_file = request.files['front']
 
+        if uploaded_file.filename != '':
+            uploaded_file.save(uploaded_file.filename)
+    return render_template('upload.html')
 
 if __name__ == '__main__': 
   
