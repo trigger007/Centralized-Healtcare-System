@@ -23,7 +23,7 @@ app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 import base64
 def save(username,image):
-    decodeit = open("data/" + username+".jpeg", 'wb') 
+    decodeit = open(os.path.dirname(os.path.realpath(__file__))+"/data/" + username+".jpeg", 'wb') 
     decodeit.write(base64.b64decode((image))) 
     decodeit.close()
 
@@ -57,6 +57,7 @@ def signup():
     image=" "
     if request.method == 'POST':
         name=request.form['name']
+        session['fname'] = name
         image=request.form['image']
         email=request.form['email']
         password=request.form['password']
@@ -70,6 +71,7 @@ def signup():
         l=image.split(",")
         save(username,l[1])
         print(name,email,password,dob,username,gender,"image",image)
+        return redirect(f'/ocr')
 
     # name = train(os.getcwd)
     # print(name)
@@ -86,26 +88,42 @@ def ocr():
             back_file.save(os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+back_file.filename)
         
         from aadharcard import aadhar_card_front
-        name , father, addr, aadhar_number, gender, dob, region = aadhar_card_front((os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+uploaded_file.filename),
+        name , co, address, aadhar, gender, dob, region = aadhar_card_front((os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+uploaded_file.filename),
                                                                                 (os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/aadhar/'+back_file.filename))
 
         session['name'] = name
-        session['father'] = father
-        session['addr'] = addr
-        session['aadhar_num'] = aadhar_number
+        session['father'] = co
+        session['addr'] = address
+        session['aadhar_num'] = aadhar
         session['gender'] = gender
         session['dob'] = dob
         print("Session-Name",name)
         
-        return render_template('aadhaar.html',name = name,co = father,aadhaar = aadhar_number,address = addr,dob = dob)
+        return redirect(url_for('aadhaar',name = name,co = co,aadhar = aadhar,address = address,dob = dob))
         #return render_template('aadhaar.html',name = name)
     return render_template('ocr.html')
 
-
-
-
+@app.route('/aadhaar', methods=["POST","GET"])
+def aadhaar():
+    str1="checking"
+    name = request.args.get('name')
+    if name==session['fname']:
+        str1="login successful"
+    else:
+        str1="fail"  
+    aadhar = request.args.get('aadhar')
+    print(session['fname'],name)
+    '''
+    if request.method == 'POST':
+        name = request.args.get('name')
+        #name=request.form['name']
+        co=request.form['co']
+        aadhar=request.form['aadhar']
+        address=request.form['address']
+    '''
         
-    return render_template('aadhaar.html')
+          
+    return render_template('aadhaar.html',name = request.args.get('name'),co = request.args.get('co'),aadhar = request.args.get('aadhar'),address = request.args.get('address'),dob = request.args.get('dob'),str=str1)
 
 if __name__ == '__main__': 
   
