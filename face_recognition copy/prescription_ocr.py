@@ -21,7 +21,7 @@ def date_cleaning(date_value):
     return date_value
 
 
-def prescription_ocr(path):
+def prescriptionn(path):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS']= os.path.join(os.path.dirname(os.path.realpath(__file__)),"project-azyo-dd74724c37c6.json")
     #os.environ['GOOGLE_APPLICATION_CREDENTIALS']= os.path.join(os.path.dirname(os.path.realpath(__file__)),"cskaa-jsrw-7ea10f0844f3.json")
     #os.environ['GOOGLE_APPLICATION_CREDENTIALS']=r'/home/shreyanshsatvik/Documents/python_env/VisionAPI/cskaa-jsrw-7ea10f0844f3.json'

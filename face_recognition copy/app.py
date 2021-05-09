@@ -125,6 +125,25 @@ def aadhaar():
           
     return render_template('aadhaar.html',name = request.args.get('name'),co = request.args.get('co'),aadhar = request.args.get('aadhar'),address = request.args.get('address'),dob = request.args.get('dob'),str=str1)
 
+@app.route('/prescription',methods=["POST","GET"])
+def prescription():
+    
+    if request.method=="POST":
+        uploaded_file = request.files['upload']
+        if uploaded_file.filename != '':
+            uploaded_file.save(os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/prescriptions_upload/'+uploaded_file.filename)
+
+        from prescription_ocr import prescriptionn
+        Patient, doctor , date, medicine_list  = prescriptionn(os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/prescriptions_upload/'+uploaded_file.filename)
+        
+        print("Patient Name- ",Patient)
+        print("Doctor- ",doctor)
+        print("Date- ",date)
+        print("Medicine- List- ",medicine_list)
+
+
+    return render_template('prescription.html')
+
 if __name__ == '__main__': 
   
     # run() method of Flask class runs the application  
