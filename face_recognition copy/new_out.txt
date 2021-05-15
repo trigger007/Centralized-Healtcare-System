@@ -1,0 +1,3 @@
+itching  skin_rash  nodal_skin_eruptions,
+It might be Fungal infection,
+skin_rash nodal_skin_eruption dischromic _patches, It must be infection
