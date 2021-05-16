@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+    <html lang="en">
+
+    
+
+<head>
+        <meta charset="utf-8" />
+        <title>Doctris</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- Icons -->
+        <!-- <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" /> -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.9.55/css/materialdesignicons.min.css"
+            integrity="sha512-vIgFb4o1CL8iMGoIF7cYiEVFrel13k/BkTGvs0hGfVnlbV6XjAA0M0oEHdWqGdAVRTDID3vIZPOHmKdrMAUChA=="
+            crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../unicons.iconscout.com/release/v3.0.6/css/line.css">
+        <!-- Css -->
+        <link href="css/style.min.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+        
+        <!-- Navbar STart -->
+        <header id="topnav" class="defaultscroll sticky">
+                    <div class="container"> 
+        <!-- Logo container-->
+         <div>
+                            <a class="logo" href="index.html">
+                                <img src="images/logo-dark.png" class="l-dark" height="22" alt="">
+                                <img src="images/logo-light.png" class="l-light" height="22" alt="">
+                            </a>
+                        </div> 
+        <!-- End Logo container-->
+        <ul class="dropdowns list-inline mb-0">
+                            <li class="list-inline-item mb-0">
+                                <div class="dropdown dropdown-primary">
+                                    <a href="../face_recognition copy/templates/login.html" class="btn btn-primary"> Login</a>
+                                    <!-- <button type="button" class="btn btn-icon btn-pills btn-primary dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-magnify icons"></i></button>
+                                    <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 py-0" style="width: 200px;">
+                                        <form>
+                                            <input type="text" id="text" name="name" class="form-control border bg-white" placeholder="Search...">
+                                        </form>
+                                    </div> -->
+                                </div>
+                            </li>
+        
+                            <!-- <li class="list-inline-item mb-0 ms-1">
+                                <div class="dropdown dropdown-primary">
+                                    <button type="button" class="btn btn-pills btn-soft-primary dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/doctors/01.jpg" class="avatar avatar-ex-small rounded-circle" alt=""></button>
+                                    <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 py-3" style="min-width: 200px;">
+                                        <a class="dropdown-item d-flex align-items-center text-dark" href="doctor-profile.html">
+                                            <img src="images/doctors/01.jpg" class="avatar avatar-md-sm rounded-circle border shadow" alt="">
+                                            <div class="flex-1 ms-2">
+                                                <span class="d-block mb-1">Calvin Carlo</span>
+                                                <small class="text-muted">Orthopedic</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item text-dark" href="doctor-dashboard.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-dashboard align-middle h6"></i></span> Dashboard</a>
+                                        <a class="dropdown-item text-dark" href="doctor-profile-setting.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-setting align-middle h6"></i></span> Profile Settings</a>
+                                        <div class="dropdown-divider border-top"></div>
+                                        <a class="dropdown-item text-dark" href="login.html"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6"></i></span> Logout</a>
+                                    </div>
+                                </div>
+                            </li> -->
+                        </ul>
+                        <div class="menu-extras">
+                            <div class="menu-item">
+        <!-- Mobile menu toggle-->
+         <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                                    <div class="lines">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </a> 
+        <!-- End mobile menu toggle-->
+         </div>
+                        </div>
+                
+                        <div id="navigation"> 
+        <!-- Navigation Menu-->
+         <ul class="navigation-menu nav-left nav-light">
+                                <li class="has-submenu parent-menu-item">
+                                    <a href="index-two.html">Home</a>
+                                   
+                                </li>
+        
+                                <li class="has-submenu parent-parent-menu-item">
+                                    <a href="../face_recognition copy/templates/ocr.html">Aadhaar Verify</a>
+                                        
+                                </li>
+        
+                                <li class="has-submenu parent-menu-item">
+                                    <a href="../face_recognition copy/templates/prescription.html">Prescription OCR</a>
+                                   
+                                </li>
+        
+                                <li class="has-submenu parent-menu-item">
+                                    <a href="../face_recognition copy/templates/chatbot.html">Chatbot</a>
+                                </li>
+                
+                                <li class="has-submenu parent-parent-menu-item"><a href="javascript:void(0)">Services</a><span class="menu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="../face_recognition copy/templates/blogs.html" class="sub-menu-item"> Blog</a></li>
+                                        
+                                        
+                                        <!-- <li><a href="terms.html" class="sub-menu-item">Terms & Policy</a></li>
+                                        <li><a href="privacy.html" class="sub-menu-item">Privacy Policy</a></li>
+                                        <li><a href="error.html" class="sub-menu-item">404 !</a></li>
+                                        <li><a href="contact.html" class="sub-menu-item">Contact</a></li> -->
+                                    </ul>
+                                </li>
+                                <!-- <li><a href="http://shreethemes.in/doctris/admin/index.html" class="sub-menu-item" target="_blank">Admin</a></li> -->
+         </ul> 
+        <!--end navigation menu-->
+         </div> 
+        <!--end navigation-->
+         </div> 
+        <!--end container-->
+         </header> 
+        <!--end header-->
+        <!-- Navbar End -->
+
+        <!-- Start Hero -->
+        <section class="bg-half-170 pb-0 d-table w-100" style="background: url('images/bg/bg-lines-one.png') center center;">
+            <div class="container">
+                <div class="row mt-5 mt-sm-0 align-items-center">
+                    <div class="col-md-6">
+                        <div class="heading-title">
+                            <h4 class="heading mb-3">Best E-Healthcare services</h4>
+                            <!-- <p class="para-desc text-muted mb-0">Great doctor if you need your family member to get immediate assistance, emergency treatment or a simple consultation.</p> -->
+                        </div>
+                        <!-- <div class="subcribe-form mt-4">
+                            <form class="ms-0" style="max-width: 550px;">
+                                <div class="mb-2">
+                                    <input type="text" id="name" name="name" class="border bg-white rounded-pill" required="" placeholder="Doctor name...">
+                                    <button type="submit" class="btn btn-pills btn-primary"><i class="ri-search-line align-middle me-1"></i> Search</button>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p class="text-muted mb-0"><b>Note:</b> Please search best doctors here,</p>
+                                    </div> -->
+                                    <!--end col-->
+                                <!-- </div> -->
+                                <!--end row-->
+                            <!-- </form>
+                        </div> -->
+                    </div><!--end col-->
+
+                    <div class="col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                        <img src="images/hero.png" class="img-fluid" alt="">
+                    </div>
+                    <!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- End Hero -->
+<!-- Cta Start -->
+<section class="section" style="background: url('images/cta.jpg') center center;">
+    <div class="bg-overlay" style="opacity: 0.3;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 offset-lg-7 col-md-7 offset-md-5">
+                <div
+                    class="features feature-bg-primary d-flex bg-white p-4 rounded-md shadow position-relative overflow-hidden">
+                    <i class="uil uil-briefcase icons h2 mb-0 text-primary"></i>
+                    <div class="ms-3">
+                        <h5 class="titles">Our Mission</h5>
+                        <p class="text-muted para mb-0">To provide e-healthcare services to one and all.</p>
+                    </div>
+                    <div class="big-icon">
+                        <i class="uil uil-briefcase"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="features feature-bg-primary d-flex bg-white p-4 rounded-md shadow position-relative overflow-hidden mt-4">
+                    <i class="uil uil-airplay icons h2 mb-0 text-primary"></i>
+                    <div class="ms-3">
+                        <h5 class="titles">Our Vision</h5>
+                        <p class="text-muted para mb-0">To develop robust healthcare system for everybody</p>
+                    </div>
+                    <div class="big-icon">
+                        <i class="uil uil-airplay"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="features feature-bg-primary d-flex bg-white p-4 rounded-md shadow position-relative overflow-hidden mt-4">
+                    <i class="uil uil-flip-v icons h2 mb-0 text-primary"></i>
+                    <div class="ms-3">
+                        <h5 class="titles">Who We Are ?</h5>
+                        <p class="text-muted para mb-0">We provide healthcare services to common people.</p>
+                    </div>
+                    <div class="big-icon">
+                        <i class="uil uil-flip-v"></i>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+<!-- Cta End -->
+
+    <!-- Start -->
+    <!-- <section class="section">
+        
+        <div class="container mt-100 mt-60">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="section-title mb-4 pb-2 text-center">
+                        <span class="badge badge-pill badge-soft-primary mb-3">Departments</span>
+                        <h4 class="title mb-4">Our Medical Services</h4>
+                        <p class="text-muted mx-auto para-desc mb-0">Great doctor if you need your family member to get
+                            effective immediate assistance, emergency treatment or a simple consultation.</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+    
+            <div class="row">
+                <div class="col-xl-3 col-md-4 col-12 mt-5">
+                    <div class="card features feature-primary border-0">
+                        <div class="icon text-center rounded-md">
+                            <i class="ri-eye-fill h3 mb-0"></i>
+                        </div>
+                        <div class="card-body p-0 mt-3">
+                            <a href="departments.html" class="title text-dark h5">Eye Care</a>
+                            <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to
+                                fill a space.</p>
+                            <a href="departments.html" class="link">Read More <i
+                                    class="ri-arrow-right-line align-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+         
+    
+                <div class="col-xl-3 col-md-4 col-12 mt-5">
+                    <div class="card features feature-primary border-0">
+                        <div class="icon text-center rounded-md">
+                            <i class="ri-psychotherapy-fill h3 mb-0"></i>
+                        </div>
+                        <div class="card-body p-0 mt-3">
+                            <a href="departments.html" class="title text-dark h5">Psychotherapy</a>
+                            <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to
+                                fill a space.</p>
+                            <a href="departments.html" class="link">Read More <i
+                                    class="ri-arrow-right-line align-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+               
+    
+                <div class="col-xl-3 col-md-4 col-12 mt-5">
+                    <div class="card features feature-primary border-0">
+                        <div class="icon text-center rounded-md">
+                            <i class="ri-stethoscope-fill h3 mb-0"></i>
+                        </div>
+                        <div class="card-body p-0 mt-3">
+                            <a href="departments.html" class="title text-dark h5">Primary Care</a>
+                            <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to
+                                fill a space.</p>
+                            <a href="departments.html" class="link">Read More <i
+                                    class="ri-arrow-right-line align-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="col-xl-3 col-md-4 col-12 mt-5">
+                    <div class="card features feature-primary border-0">
+                        <div class="icon text-center rounded-md">
+                            <i class="ri-capsule-fill h3 mb-0"></i>
+                        </div>
+                        <div class="card-body p-0 mt-3">
+                            <a href="departments.html" class="title text-dark h5">Dental Care</a>
+                            <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to
+                                fill a space.</p>
+                            <a href="departments.html" class="link">Read More <i
+                                    class="ri-arrow-right-line align-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            
+    
+                <div class="col-xl-3 col-md-4 col-12 mt-5">
+                    <div class="card features feature-primary border-0">
+                        <div class="icon text-center rounded-md">
+                            <i class="ri-microscope-fill h3 mb-0"></i>
+                        </div>
+                        <div class="card-body p-0 mt-3">
+                            <a href="departments.html" class="title text-dark h5">Orthopedic</a>
+                            <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to
+                                fill a space.</p>
+                            <a href="departments.html" class="link">Read More <i
+                                    class="ri-arrow-right-line align-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+              
+    
+                <div class="col-xl-3 col-md-4 col-12 mt-5">
+                    <div class="card features feature-primary border-0">
+                        <div class="icon text-center rounded-md">
+                            <i class="ri-pulse-fill h3 mb-0"></i>
+                        </div>
+                        <div class="card-body p-0 mt-3">
+                            <a href="departments.html" class="title text-dark h5">Cardiology</a>
+                            <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to
+                                fill a space.</p>
+                            <a href="departments.html" class="link">Read More <i
+                                    class="ri-arrow-right-line align-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+           
+    
+                <div class="col-xl-3 col-md-4 col-12 mt-5">
+                    <div class="card features feature-primary border-0">
+                        <div class="icon text-center rounded-md">
+                            <i class="ri-empathize-fill h3 mb-0"></i>
+                        </div>
+                        <div class="card-body p-0 mt-3">
+                            <a href="departments.html" class="title text-dark h5">Gynecology</a>
+                            <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to
+                                fill a space.</p>
+                            <a href="departments.html" class="link">Read More <i
+                                    class="ri-arrow-right-line align-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+             
+    
+                <div class="col-xl-3 col-md-4 col-12 mt-5">
+                    <div class="card features feature-primary border-0">
+                        <div class="icon text-center rounded-md">
+                            <i class="ri-mind-map h3 mb-0"></i>
+                        </div>
+                        <div class="card-body p-0 mt-3">
+                            <a href="departments.html" class="title text-dark h5">Neurology</a>
+                            <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to
+                                fill a space.</p>
+                            <a href="departments.html" class="link">Read More <i
+                                    class="ri-arrow-right-line align-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+       
+        </div>
+        
+    </section> -->
+    <!--end section-->
+
+       
+
+        <!-- Start -->
+        <section class="section">
+           
+
+            <div class="container mt-100 mt-60">
+                <!-- <div class="row align-items-center">
+                    <div class="col-md-6 col-12">
+                        <div class="me-lg-5">
+                            <img src="images/svg/vaccine-development-amico.svg" class="img-fluid" alt="">
+                        </div> -->
+                    <!-- </div>  end col -->
+                    
+                    <!-- <div class="col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item border rounded">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        How does it work ?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body text-muted">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border rounded mt-2">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        Do I need a designer to use Doctris ?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse border-0 collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body text-muted">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border rounded mt-2">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        What do I need to do to start selling ?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse border-0 collapse" aria-labelledby="headingThree"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body text-muted">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border rounded mt-2">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        What happens when I receive an order ?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse border-0 collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body text-muted">
+                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    <!--</div><!--end col-->
+               <!-- </div><!--end row-->
+
+                <div class="row mt-4 pt-2 justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title">
+                            <h4 class="title mb-4">Have Question ? Get in touch!</h4>
+                            <p class="text-muted para-desc mx-auto"></p>
+                            <a href="javascript:void(0)" class="btn btn-primary mt-4"><i class="mdi mdi-phone"></i> Contact us</a>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- End -->
+
+        <!-- Start -->
+        <footer class="bg-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-4 mb-0 mb-md-4 pb-0 pb-md-2">
+                        <a href="#" class="logo-footer">
+                            <img src="images/logo-light.png" height="24" alt="">
+                        </a>
+                        <p class="mt-4 me-xl-5">We provide centralised healthcare system for common people.</p>
+                    </div><!--end col-->
+
+                    <div class="col-xl-7 col-lg-8 col-md-12">
+                        <div class="row">
+                            <div class="col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                <!--<h5 class="text-light footer-head">Company</h5>
+                                 <ul class="list-unstyled footer-list mt-4">
+                                    <li><a href="aboutus.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> About us</a></li>
+                                    <li><a href="departments.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Services</a></li>
+                                    <li><a href="doctor-team-two.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Team</a></li>
+                                    <li><a href="blog-detail.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Project</a></li>
+                                    <li><a href="blogs.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Blog</a></li>
+                                    <li><a href="login.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Login</a></li>
+                                </ul> -->
+                            </div><!--end col-->
+                            
+                            <div class="col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                               <!-- <h5 class="text-light footer-head">Departments</h5>
+                                <ul class="list-unstyled footer-list mt-4">
+                                    <li><a href="departments.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Eye Care</a></li>
+                                    <li><a href="departments.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Psychotherapy</a></li>
+                                    <li><a href="departments.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Dental Care</a></li>
+                                    <li><a href="departments.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Orthopedic</a></li>
+                                    <li><a href="departments.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Cardiology</a></li>
+                                    <li><a href="departments.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Gynecology</a></li>
+                                    <li><a href="departments.html" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Neurology</a></li>
+                                </ul>-->
+                            </div><!--end col-->
+                            
+                            <div class="col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                <h5 class="text-light footer-head">Contact us</h5>
+                                <ul class="list-unstyled footer-list mt-4">
+                                    <li class="d-flex align-items-center">
+                                        <i data-feather="mail" class="fea icon-sm text-foot align-middle"></i>
+                                        <a href="mailto:contact@example.com" class="text-foot ms-2">contact@example.com</a>
+                                    </li>
+
+                                    <li class="d-flex align-items-center">
+                                        <i data-feather="phone" class="fea icon-sm text-foot align-middle"></i>
+                                        <a href="tel:+152534-468-854" class="text-foot ms-2">+152 534-468-854</a>
+                                    </li>
+
+                                    <li class="d-flex align-items-center">
+                                        <i data-feather="map-pin" class="fea icon-sm text-foot align-middle"></i>
+                                        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin" class="video-play-icon text-foot ms-2">View on Google map</a>
+                                    </li>
+                                </ul>
+
+                                <!-- <ul class="list-unstyled social-icon footer-social mb-0 mt-4">
+                                    <li class="list-inline-item"><a href="#" class="rounded-pill"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
+                                    <li class="list-inline-item"><a href="#" class="rounded-pill"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
+                                    <li class="list-inline-item"><a href="#" class="rounded-pill"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
+                                    <li class="list-inline-item"><a href="#" class="rounded-pill"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
+                                </ul> -->
+                                <!--end icon-->
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            
+        </footer><!--end footer-->
+        <!-- End -->
+
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" id="back-to-top" class="btn btn-icon btn-pills btn-primary back-to-top"><i data-feather="arrow-up" class="icons"></i></a>
+        <!-- Back to top -->
+
+        <!-- MOdal Start -->
+        <div class="modal fade" id="watchvideomodal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content video-modal rounded overflow-hidden">
+                    <video class="w-100" controls autoplay muted loop>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">>
+                        <!--Browser does not support <video> tag -->
+                    </video>
+                </div>
+            </div>
+        </div>
+        <!-- MOdal End -->
+        
+        <!-- javascript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+            integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+            crossorigin="anonymous"></script>
+            
+        <!-- Icons -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
+            integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g=="
+            crossorigin="anonymous"></script>
+        <!-- Main Js -->
+        <script src="js/app.js"></script>
+        
+    </body>
+
+
+
+</html>
