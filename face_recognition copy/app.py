@@ -41,7 +41,7 @@ def login():
         print(name)
         if name==s:
             print(name)
-            return redirect(f'/signup')
+            return redirect(f'/home')
             
     
     return render_template('login.html')
@@ -107,12 +107,15 @@ def ocr():
 def aadhaar():
     str1="checking"
     name = request.args.get('name')
-    if name==session['fname']:
-        str1="login successful"
-    else:
-        str1="fail"  
+     
     aadhar = request.args.get('aadhar')
     print(session['fname'],name)
+    if request.method == 'POST':
+        if name==session['fname']:
+            str1="login successful"
+            return redirect(url_for('home'))
+        else:
+            str1="fail" 
     '''
     if request.method == 'POST':
         name = request.args.get('name')
@@ -124,6 +127,10 @@ def aadhaar():
         
           
     return render_template('aadhaar.html',name = request.args.get('name'),co = request.args.get('co'),aadhar = request.args.get('aadhar'),address = request.args.get('address'),dob = request.args.get('dob'),str=str1)
+
+@app.route('/home',methods=["POST","GET"])
+def home():
+    return render_template("index-two.html")
 
 @app.route('/prescription',methods=["POST","GET"])
 def prescription():
