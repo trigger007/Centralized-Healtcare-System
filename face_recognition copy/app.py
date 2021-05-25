@@ -13,6 +13,9 @@ from flask import Flask, render_template, request
 from chatterbot.trainers import ListTrainer
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
+from flask import Flask, render_template, request, jsonify
+import dbHandler
+import time
 
 UPLOAD_FOLDER = 'static/uploads/'
 
@@ -191,7 +194,7 @@ def sms():
     return render_template("sms.html")
 
 @app.route("/chatbot")
-def home():
+def chatbot():
     return render_template("chatbot.html")
 
 @app.route("/get")
@@ -199,6 +202,46 @@ def get_bot_response():
     user_input = request.args.get('msg')
     return str(bot.get_response(user_input))
 
+
+@app.route('/chatroom')
+def chatroom():
+    return render_template("chathome.html") # This page will be renderd for homeUrl
+
+@app.route('/createChatRoom', methods= ['GET','POST'])
+def createChatRoom():
+    chatRoomDb = 'C' + str(int(time.time())) # Creating new Name of the chatroom ID according to UNIX timestamp.
+
+    dbHandler.createChatRoomDB(chatRoomDb) # Creating new table in database for new chatroom.
+    dbHandler.createChatRoomID(chatRoomDb) # Enlisting new 'database ID' to 'ChatRoomID' table.
+
+    return(chatRoomDb) # returning name of the new chatroom, client side script will be executed according to this.
+
+@app.route('/<chatRoomName>') # variable 'url' for any chatroom
+def chatRoom(chatRoomName):
+    return render_template("chatindex.html", chatRoomName = chatRoomName) # This is common chatroom page, this will be renderd for any chatroom.
+
+
+@app.route('/addChatToDB', methods= ['GET','POST'])
+def addChatToDB():
+    chatRoomID = request.form['chatRoomID'] #This data will come via ajax request, check 'main.js' file
+    username = request.form['username'] # same as previous 
+    comment = request.form['comment'] # same as previous 
+    # chatCount = request.form['chatCount'] #This data will come via ajax request, this chat count will be incremented acoording to client side.
+
+    dbHandler.addChatToDB(chatRoomID,username,comment) # comment and username will be inserted to db according to chatRoomID.
+    
+    return ('', 204) # For returning null value to client
+
+
+
+@app.route('/fetchChatData', methods= ['GET','POST'])
+def fetchChatData():
+    chatCount = request.form['chatCount']
+    chatRoomID = request.form['chatRoomID']
+
+    chats = dbHandler.retrieveChatRoom(chatRoomID,chatCount)
+
+    return jsonify(chats)
 
 if __name__ == '__main__': 
   
