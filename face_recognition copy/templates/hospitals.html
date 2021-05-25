@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Datatables Example</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+<h1>My Heading</h1>
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Medicine</th>
+                <th>Address</th>
+                <th>Website</th>
+                <th>Specialization</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Medicine</th>
+                <th>Address</th>
+                <th>Website</th>
+                <th>Specialization</th>
+            </tr>
+        </tfoot>
+    </table>
+<script>
+function setupData() {
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "ajax": {
+                // "url": "static/objects2.txt", // This works for the static file
+                "url": "/index_get_data", // This now works too thanks to @kthorngren
+                "dataType": "json",
+                "dataSrc": "data",
+                "contentType":"application/json"
+            },
+            "columns": [
+                {"data": "id"},
+                {"data": "state"},
+                {"data": "city"},
+                {"data": "name"},
+                {"data": "category"},
+                {"data": "medicine"},
+                {"data": "address"},
+                {"data": "website"},
+                {"data": "specilization"}
+            ]
+        });
+    });
+}
+$( window ).on( "load", setupData );
+</script>
+</body>
