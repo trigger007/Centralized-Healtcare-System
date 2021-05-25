@@ -1,12 +1,41 @@
 <html>
     <head>
-        <title> yayy</title>
+        <title>SMS</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.9.55/css/materialdesignicons.min.css"
+                integrity="sha512-vIgFb4o1CL8iMGoIF7cYiEVFrel13k/BkTGvs0hGfVnlbV6XjAA0M0oEHdWqGdAVRTDID3vIZPOHmKdrMAUChA=="
+                crossorigin="anonymous" />
+            <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+            <link rel="stylesheet" href="../../../unicons.iconscout.com/release/v3.0.6/css/line.css">
+            <!-- Css -->
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.min.css') }}">
     </head>
     <body>
-        <form method="POST" action="/response">
-            <label for="fname">Mobile number:</label><br>
-            <input type="number"  name="num">
-            <button>Submit</button>
+       <center> 
+        <div class="col-lg-5 col-md-8">
+            <h3>GET SMS NOTIFICATION</h3>
+           <form method="POST" action="/response" class="login-form mt-4">
+            <label for="fname"><strong>Mobile number:</strong></label><br>
+            <input type="number" class="form-control"  name="num" placeholder="Your mobile number">
+            <br>
+            <button class="btn btn-primary">Submit</button>
         </form>
+        </div>
+    </center>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+            integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+            crossorigin="anonymous"></script>
+        
+        <!-- Icons -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
+            integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g=="
+            crossorigin="anonymous"></script>
+        <!-- Main Js -->
+        <script src="{{ url_for('static',filename='js/app.js') }}"> </script>
     </body>
 </html>
