@@ -179,6 +179,17 @@ def prescription():
 
     return render_template('prescription.html')
 
+@app.route('/sms', methods=["POST","GET"])
+def sms():
+    from sms import check
+    if request.method=="POST":
+        n=request.form["num"]
+        print(n)
+        check(str(n))
+        
+
+    return render_template("sms.html")
+
 @app.route("/chatbot")
 def home():
     return render_template("chatbot.html")
