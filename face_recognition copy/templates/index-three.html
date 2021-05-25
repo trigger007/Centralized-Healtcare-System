@@ -23,7 +23,7 @@
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../unicons.iconscout.com/release/v3.0.6/css/line.css">
     <!-- Css -->
-    <link href="css/style.min.css" rel="stylesheet" type="text/css" />
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.min.css') }}">
    
 </head>
 
@@ -45,9 +45,9 @@
     <!-- Logo container-->
      <div>
                         <a class="logo" href="index.html">
-                            <img src="images/logo-dark.png" class="l-dark" height="22" alt="">
-                            <img src="images/logo-light.png" class="l-light" height="22" alt="">
-                        </a>
+                            <img src="{{url_for('static', filename='images/logo-dark.png')}}" class="l-dark" height="22" alt="" />
+                            <img src="{{url_for('static', filename='images/logo-light.png')}}" class="l-light" height="22" alt=""/>
+                    </a>
                     </div> 
     <!-- End Logo container-->
     <ul class="dropdowns list-inline mb-0">
@@ -119,19 +119,17 @@
                             </li>
 
                             <li class="has-submenu parent-menu-item">
-                                <a href="/hospital_details">Hospitals</a>
+                                <a href="/hospitals">Hospitals</a>
                             
-                            <li class="has-submenu parent-menu-item">
-                                <a href="/chatroom">Doctris Chat</a>
-
-                            <li class="has-submenu parent-menu-item">
-                                <a href="/prescription">Call Ambulance</a>
+                            
 
             
                             <li class="has-submenu parent-parent-menu-item"><a href="javascript:void(0)">Services</a><span class="menu-arrow"></span>
                                 <ul class="submenu">
                                     <li><a href="/blog" class="sub-menu-item"> Blog</a></li>
                                     <li><a href="/blockchain" class="sub-menu-item"> Blockchain Service</a></li>
+                                    <li><a href="/sms" class="sub-menu-item"> Call Ambulance</a></li>
+                                    <li><a href="/chatroom" class="sub-menu-item"> Doctris Chat</a></li>
                                     
                                     <!-- <li><a href="terms.html" class="sub-menu-item">Terms & Policy</a></li>
                                     <li><a href="privacy.html" class="sub-menu-item">Privacy Policy</a></li>
@@ -177,7 +175,7 @@
                 </div><!--end col-->
 
                 <div class="col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
-                    <img src="images/hero.png" class="img-fluid" alt="">
+                    <img src="{{url_for('static', filename='images/hero.png')}}"class="img-fluid" alt="" />
                 </div>
                 <!--end col-->
             </div><!--end row-->
@@ -484,7 +482,7 @@
             <div class="row">
                 <div class="col-xl-5 col-lg-4 mb-0 mb-md-4 pb-0 pb-md-2">
                     <a href="#" class="logo-footer">
-                        <img src="images/logo-light.png" height="24" alt="">
+                        <img src="{{url_for('static', filename='images/logo-light.png')}}"  height="24" alt="" />
                     </a>
                     <p class="mt-4 me-xl-5">We provide centralised healthcare system for common people.</p>
                 </div><!--end col-->
@@ -582,7 +580,7 @@
         integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g=="
         crossorigin="anonymous"></script>
     <!-- Main Js -->
-    <script src="js/app.js"></script>
+    <script src="{{ url_for('static',filename='js/app.js') }}"> </script>
     
 </body>
 
