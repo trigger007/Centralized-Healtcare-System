@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Datatables Example</title>
+  <title>List of hospitals</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css"/>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
-<h1>My Heading</h1>
+<h1>List of hospitals</h1>
 <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
@@ -43,7 +43,7 @@ function setupData() {
         $('#example').DataTable({
             "ajax": {
                 // "url": "static/objects2.txt", // This works for the static file
-                "url": "/index_get_data", // This now works too thanks to @kthorngren
+                "url": "/hospitals", // This now works too thanks to @kthorngren
                 "dataType": "json",
                 "dataSrc": "data",
                 "contentType":"application/json"

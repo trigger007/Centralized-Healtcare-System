@@ -1,22 +1,4 @@
-# from flask import Flask, render_template, redirect, url_for, request, session
-# import requests
-# import json
-# city = input("Enter Your City:")
 
-
-
-# req = requests.get("http://indian-hospital.herokuapp.com/api/v1/hospitals/?city=Ranchi&format=json")
-# url = "http://indian-hospital.herokuapp.com/api/v1/hospitals/?city="+city+"&format=json"
-# req=requests.get(url)
-
-# print(req.content)
-
-# app=Flask(__name__)
-# @app.route('/', methods=['POST', 'GET'])
-# def index():
-#     req = requests.get("http://indian-hospital.herokuapp.com/api/v1/hospitals/?city=Ranchi&format=json")
-#     print(req.content)
-#     return render_template('hello')
 
 from flask import Flask, render_template, jsonify
 import requests
@@ -24,24 +6,42 @@ import json
 from flask import Flask, render_template, redirect, url_for, request, session
 app = Flask(__name__)
  
-@app.route('/index')
-@app.route('/')
+@app.route('/hospital')
+def hospital():
+    data1 = request.args.get('data')
+    return render_template('hospitals.html',data=data1)
+
+@app.route('/', methods=['POST', 'GET'])
 def index():
-  return render_template('hospitals.html')
+    if request.method == 'POST':
+        city = request.form['city']
+        print(city)
+        session['city'] = city
+        return redirect(url_for('hospital',city=city))
+    return render_template('hospital_form.html')
  
-@app.route('/index_get_data')
-def stuff():
-  # Assume data comes from somewhere else
-
-  req = requests.get("http://indian-hospital.herokuapp.com/api/v1/hospitals/?city=Mumbai&format=json")
-  print("Data",req.json())
 
 
-  data = {
+@app.route('/hospitals', methods=['POST', 'GET'])
+def hospitals():
+    city_name = session['city']
+    url = "http://indian-hospital.herokuapp.com/api/v1/hospitals/?city="+city_name+"&format=json"
+    req = requests.get(url)
+    print("Data",req.json())
+    data = {
     "data": req.json()
-  }
-  return jsonify(data)
- 
+    }
+    return jsonify(data)
+    
+
+
+
  
 if __name__ == '__main__':
-  app.run()
+
+    app.secret_key = 'super secret key'
+    app.config['SESSION_TYPE'] = 'filesystem'
+
+    
+    app.run()
+
