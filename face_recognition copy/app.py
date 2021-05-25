@@ -52,6 +52,11 @@ def save(username,image):
     decodeit.write(base64.b64decode((image))) 
     decodeit.close()
 
+def temp_save(image):
+    decodeit = open(os.path.dirname(os.path.realpath(__file__))+"/temp/" + "temp"+".jpeg", 'wb') 
+    decodeit.write(base64.b64decode((image))) 
+    decodeit.close()
+
 
 mysql = MySQL(app)
 @app.route('/', methods=['POST', 'GET'])
@@ -67,13 +72,18 @@ def login():
     print("hello")
     if request.method == 'POST':
         username=request.form['username']
-        print(username)
-        s="/data/"+username+".jpeg"
-        name = train(os.getcwd)
-        print(name)
+        image=request.form['image']
+        l=image.split(',')
+        img=l[1]
+        temp_save(img)
+        #print(username)
+        s=username+".jpeg"
+        print("s",s)
+        name = train()
+        print("app",name)
         if name==s:
-            print(name)
-            return redirect(f'/home')
+            print("it worked:",name)
+            return redirect(url_for('home2'))
             
     
     return render_template('login.html')
