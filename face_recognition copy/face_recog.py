@@ -14,12 +14,14 @@ def train():
 
     #path = os.path.join(cur_direc,'face_recognition_copy/data/')
     #path=('/face_recognition_copy/data')
-    f=os.listdir("face_recognition copy/data") 
+    #f=os.listdir("face_recognition copy/data") 
+    f = os.listdir(cur_direc+"/data")
     print(f)
     #list_of_files = [f for f in (glob.glob(path+'*.jpg') and (glob.glob(path+'*.jpeg')))]
     #number_files = len(list_of_files)
     #names = list_of_files.copy()
     path="face_recognition copy/data/"
+    path = cur_direc+"/data/"
     #print(path)
     # print(number_files)
     # print(list_of_files)
@@ -43,7 +45,7 @@ def train():
     #video_capture = cv2.VideoCapture(0)
     
     #frame = cv2. imread(path1)
-    frame1=face_recognition.load_image_file("/home/adityasingh/GitHub/Tarp2final/face_recognition copy/temp/temp.jpeg")
+    frame1=face_recognition.load_image_file("/home/shreyanshsatvik/GIT/Centralized-Healtcare-System/face_recognition copy/temp/temp.jpeg")
     frame= face_recognition.face_encodings(frame1)[0]
     #print(frame)
     # small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)

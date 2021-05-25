@@ -83,7 +83,7 @@ def login():
         print("app",name)
         if name==s:
             print("it worked:",name)
-            return redirect(url_for('home2'))
+            return redirect(url_for('homepage2'))
             
     
     return render_template('login.html')
