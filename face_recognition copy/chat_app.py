@@ -19,6 +19,7 @@ bot = ChatBot('Buddy', storage_adapter='chatterbot.storage.SQLStorageAdapter',
 'chatterbot.preprocessors.unescape_html',
 'chatterbot.preprocessors.convert_to_ascii'])
 
+"""
 trainer = ListTrainer(bot)
 
 trainer.train([
@@ -51,24 +52,8 @@ trainer.train(conv_1)
 trainer = ChatterBotCorpusTrainer(bot)
 trainer.train('chatterbot.corpus.english')
 
-
-'''
-while True:
-    
-    request = input(name+':')
-    
-    if request=="Bye" or request=='bye':
-        print('Bot: Bye')
-        break
-    else:
-        response=bot.get_response(request)
-        print('Bot: ', response)
-'''
 """
 
-response = bot.get_response ("From where do you work?")
-print(response)
-"""
 
 @app.route("/")
 def home():

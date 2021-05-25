@@ -23,7 +23,10 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
         <link rel="stylesheet" href="../../../unicons.iconscout.com/release/v3.0.6/css/line.css">
         <!-- Css -->
-        <link href="css/style.min.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="{{ url_for('static',filename='styles/style.min.css') }}" rel="stylesheet" type="styles/css" > -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.min.css') }}">
+        <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}"> -->
+       
     </head>
 
     <body>
@@ -44,15 +47,17 @@
         <!-- Logo container-->
          <div>
                             <a class="logo" href="index.html">
-                                <img src="images/logo-dark.png" class="l-dark" height="22" alt="">
-                                <img src="images/logo-light.png" class="l-light" height="22" alt="">
+                                <img src="{{url_for('static', filename='images/logo-dark.png')}}" class="l-dark" height="22" alt="" />
+                                <img src="{{url_for('static', filename='images/logo-light.png')}}" class="l-light" height="22" alt=""/>
+                                <!-- <img src="images/logo-dark.png" class="l-dark" height="22" alt=""> -->
+                                <!-- <img src="images/logo-light.png" class="l-light" height="22" alt=""> -->
                             </a>
                         </div> 
         <!-- End Logo container-->
         <ul class="dropdowns list-inline mb-0">
                             <li class="list-inline-item mb-0">
                                 <div class="dropdown dropdown-primary">
-                                    <a href="../face_recognition copy/templates/login.html" class="btn btn-primary"> Login</a>
+                                    <a href="./face_recognition copy/templates/login.html" class="btn btn-primary"> Login</a>
                                     <!-- <button type="button" class="btn btn-icon btn-pills btn-primary dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-magnify icons"></i></button>
                                     <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 py-0" style="width: 200px;">
                                         <form>
@@ -99,27 +104,27 @@
         <!-- Navigation Menu-->
          <ul class="navigation-menu nav-left nav-light">
                                 <li class="has-submenu parent-menu-item">
-                                    <a href="index-two.html">Home</a>
+                                    <a href="/">Home</a>
                                    
                                 </li>
         
-                                <li class="has-submenu parent-parent-menu-item">
-                                    <a href="../face_recognition copy/templates/ocr.html">Aadhaar Verify</a>
+                                <!-- <li class="has-submenu parent-parent-menu-item">
+                                    <a href="./face_recognition copy/templates/ocr.html">Aadhaar Verify</a>
                                         
-                                </li>
+                                </li> -->
         
                                 <li class="has-submenu parent-menu-item">
-                                    <a href="../face_recognition copy/templates/prescription.html">Prescription OCR</a>
+                                    <a href="/prescription">Prescription OCR</a>
                                    
                                 </li>
         
                                 <li class="has-submenu parent-menu-item">
-                                    <a href="../face_recognition copy/templates/chatbot.html">Chatbot</a>
+                                    <a href="/chatbot">Chatbot</a>
                                 </li>
                 
                                 <li class="has-submenu parent-parent-menu-item"><a href="javascript:void(0)">Services</a><span class="menu-arrow"></span>
                                     <ul class="submenu">
-                                        <li><a href="../face_recognition copy/templates/blogs.html" class="sub-menu-item"> Blog</a></li>
+                                        <li><a href="/blog" class="sub-menu-item"> Blog</a></li>
                                         
                                         
                                         <!-- <li><a href="terms.html" class="sub-menu-item">Terms & Policy</a></li>
@@ -166,7 +171,8 @@
                     </div><!--end col-->
 
                     <div class="col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
-                        <img src="images/hero.png" class="img-fluid" alt="">
+                        <img src="{{url_for('static', filename='images/hero.png')}}"class="img-fluid" alt="" />
+                        <!-- <img src="images/hero.png" class="img-fluid" alt=""> -->
                     </div>
                     <!--end col-->
                 </div><!--end row-->
@@ -174,7 +180,7 @@
         </section><!--end section-->
         <!-- End Hero -->
 <!-- Cta Start -->
-<section class="section" style="background: url('images/cta.jpg') center center;">
+<section class="section"  background_image=url(../images/cta.jpg);>
     <div class="bg-overlay" style="opacity: 0.3;"></div>
     <div class="container">
         <div class="row">
@@ -473,7 +479,8 @@
                 <div class="row">
                     <div class="col-xl-5 col-lg-4 mb-0 mb-md-4 pb-0 pb-md-2">
                         <a href="#" class="logo-footer">
-                            <img src="images/logo-light.png" height="24" alt="">
+                            <img src="{{url_for('static', filename='images/logo-light.png')}}"  height="24" alt="" />
+                            <!-- <img src="images/logo-light.png" height="24" alt=""> -->
                         </a>
                         <p class="mt-4 me-xl-5">We provide centralised healthcare system for common people.</p>
                     </div><!--end col-->
@@ -571,7 +578,8 @@
             integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g=="
             crossorigin="anonymous"></script>
         <!-- Main Js -->
-        <script src="js/app.js"></script>
+        <script src="{{ url_for('static',filename='js/app.js') }}"> </script>
+        <!-- <script src="js/app.js"></script> -->
         
     </body>
 

@@ -12,7 +12,7 @@ def train(path):
 
     cur_direc = os.getcwd()
 
-    path = os.path.join(cur_direc,'data/')
+    path = os.path.join(cur_direc,'/data/')
     list_of_files = [f for f in (glob.glob(path+'*.jpg') and (glob.glob(path+'*.jpeg')))]
     number_files = len(list_of_files)
     names = list_of_files.copy()

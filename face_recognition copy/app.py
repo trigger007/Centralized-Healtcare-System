@@ -9,6 +9,10 @@ from flask import Markup
 import os
 from face_recog import train
 from flask_mysqldb import MySQL
+from flask import Flask, render_template, request
+from chatterbot.trainers import ListTrainer
+from chatterbot import ChatBot
+from chatterbot.trainers import ChatterBotCorpusTrainer
 
 UPLOAD_FOLDER = 'static/uploads/'
 
@@ -21,6 +25,23 @@ app.config['MYSQL_DB'] = 'tarp'
 app.config["UPLOAD_FOLDER"]=UPLOAD_FOLDER
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
+
+
+
+bot = ChatBot('Buddy', storage_adapter='chatterbot.storage.SQLStorageAdapter',
+            database_uri='sqlite:///database.sqlite3_eng',logic_adapters = [
+                 {
+                     'import_path': 'chatterbot.logic.BestMatch',
+                     'default_response': 'I am sorry, I do not understand. I am still learning. Please contact doctor from our chat window for further assistance.',
+                     'maximum_similarity_threshold': 0.90
+                 }
+             ],
+             read_only = True,
+             preprocessors=['chatterbot.preprocessors.clean_whitespace',
+'chatterbot.preprocessors.unescape_html',
+'chatterbot.preprocessors.convert_to_ascii'])
+
+
 import base64
 def save(username,image):
     decodeit = open(os.path.dirname(os.path.realpath(__file__))+"/data/" + username+".jpeg", 'wb') 
@@ -29,6 +50,13 @@ def save(username,image):
 
 
 mysql = MySQL(app)
+@app.route('/', methods=['POST', 'GET'])
+def homepage():
+    return render_template('index-two.html')
+
+@app.route('/home2',methods=['POST', 'GET'])
+def homepage2():
+    return render_template('index-three.html')
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -143,6 +171,16 @@ def prescription():
 
 
     return render_template('prescription.html')
+
+@app.route("/chatbot")
+def home():
+    return render_template("chatbot.html")
+
+@app.route("/get")
+def get_bot_response():
+    user_input = request.args.get('msg')
+    return str(bot.get_response(user_input))
+
 
 if __name__ == '__main__': 
   

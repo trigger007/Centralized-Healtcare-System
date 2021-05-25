@@ -2,27 +2,36 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+      integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
   </head>
   <body>
     <h1>Welcome to Doctris Virtual Assistant</h1>
     <div>
       <div id="chatbox">
-        <p class="botText"><span>Hi! I'm Doctris's Virtual Assistant, how may I assist you ?</span></p>
+        <p class="botText" ><span style="background-color: #EF5350;padding: 10px;border-radius: 10px;">Hi! I'm Doctris's Virtual Assistant, how may I assist you ?</span></p>
       </div>
       <div id="userInput">
-        <input id="textInput" type="text" name="msg" placeholder="Message">
-        <input id="buttonInput" type="submit" value="Send">
+        <input id="textInput" type="text" class="form-control" name="msg" placeholder="Message">
+        <input id="buttonInput" class="btn btn-primary" type="submit" value="Send" style="background-color: #396cf0 !important;
+    border: 1px solid #396cf0 !important;
+    color: #fff !important;
+    -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+    box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+    ">
       </div>
       <script>
         function getBotResponse() {
           var rawText = $("#textInput").val();
-          var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+          var userHtml = '<p class="userText"><span style="background-color: #396cf0;padding: 10px;border-radius: 10px;">' + rawText + '</span></p>';
           $("#textInput").val("");
           $("#chatbox").append(userHtml);
           document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
           $.get("/get", { msg: rawText }).done(function(data) {
-            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            var botHtml = '<p class="botText"><span style="background-color: #EF5350;padding: 10px;border-radius: 10px;">' + data + '</span></p>';
             $("#chatbox").append(botHtml);
             document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
           });
@@ -36,7 +45,7 @@
             if (document.getElementById("textInput").value != "") {
                 getBotResponse();
             }
-        })
+        });
       </script>
     </div>
   </body>

@@ -54,9 +54,9 @@ h3 {
 }
 
 .userText span {
-    background-color: #009688;
+    background-color: #396cf0;
     padding: 10px;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .botText {
@@ -70,7 +70,7 @@ h3 {
 .botText span {
     background-color: #EF5350;
     padding: 10px;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 #tidbit {

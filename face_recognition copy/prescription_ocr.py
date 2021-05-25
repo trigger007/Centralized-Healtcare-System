@@ -146,4 +146,4 @@ def prescriptionn(path):
     return Patient, doctor , date, medicine_list
 
     
-#prescription("/home/shreyanshsatvik/GIT/Centralized-Healtcare-System/face_recognition copy/prescriptions/pres2.jpeg")
+prescriptionn("/home/shreyanshsatvik/GIT/Centralized-Healtcare-System/face_recognition copy/prescriptions/pres1.jpeg")
